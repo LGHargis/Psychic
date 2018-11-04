@@ -12,9 +12,9 @@
         <h3 class="text-center">Do you have Psychic Powers? Guess the letter I am thinking of...</h3>
     </div>
     <div class="game">
-        <p id="directions-text"></p>
+        <p id="directions-text">Press any key when you feel "the vibe"</p>
         <p id="userchoice-text"></p>
-        <p id="computerchoic-text"></p>
+        <p id="computerchoice-text"></p>
         <p id="wins-text"></p>
         <p id="losses-text"></p>
     </div>
@@ -27,7 +27,7 @@
         // Creating variables to hold the number of wins, losses, and ties. They start at 0.
         var wins = 0;
         var losses = 0;
-        var ties = 0;
+
 
         // Create variables that hold references to the places in the HTML where we want to display things.
         var directionsText = document.getElementById("directions-text");
@@ -49,6 +49,13 @@
             console.log(computerGuess);
             // Only run the following code block if the user presses "r" or "p" or "s".
             if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
+                if (userGuess === computerGuess) {
+                    wins++;
+                }
+                else {
+                    losses++;
+                }
+                directionsText.textContent = "";
                 userChoiceText.textContent = "You chose:" + "" + userGuess;
                 computerChoiceText.textContent = "I was thinking of:" + "" + computerGuess;
                 winsText.textContent = "wins: " + wins;
